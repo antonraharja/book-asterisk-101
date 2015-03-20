@@ -15,3 +15,7 @@ If you speaks Bahasa Indonesia you may also post questions or start discussions 
 
 Anton Raharja  
 http://www.antonraharja.com
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/antonraharja/book-asterisk-101/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
