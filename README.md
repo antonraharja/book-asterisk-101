@@ -5,7 +5,7 @@ Update **150804**
 
 This is a project of book writing. A companion materials for Asterisk 101 training.
 
-The book content is in [book-contents](book-contents) folder.
+Visit the [book content (English)](book-contents/en).
 
 Configuration files or related files used in the book are stored in [attached-files](attached-files) folder.
 
