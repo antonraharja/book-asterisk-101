@@ -1,6 +1,8 @@
 Asterisk 101
 ============
 
+Update **150804**
+
 This is a project of book writing. A companion materials for Asterisk 101 training.
 
 The book content is in [Wiki page](https://github.com/antonraharja/book-asterisk-101/wiki).
@@ -13,5 +15,5 @@ If you speaks Bahasa Indonesia you may also post questions or start discussions 
 
 --
 
-Anton Raharja  
+Anton Raharja
 [http://www.antonraharja.com](http://www.antonraharja.com)
