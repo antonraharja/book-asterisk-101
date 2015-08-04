@@ -5,9 +5,9 @@ Update **150804**
 
 This is a project of book writing. A companion materials for Asterisk 101 training.
 
-The book content is in [Wiki page](https://github.com/antonraharja/book-asterisk-101/wiki).
+The book content is in [book-contents](book-contents) folder.
 
-Configuration files or related files used in the book are stored in `attached-files` folder.
+Configuration files or related files used in the book are stored in [attached-files](attached-files) folder.
 
 Any questions may be directed to me through my email antonrd@gmail.com or my Twitter handle [antonrd](http://twitter.com/antonrd).
 
