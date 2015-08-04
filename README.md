@@ -9,13 +9,9 @@ Configuration files or related files used in the book are stored in `attached-fi
 
 Any questions may be directed to me through my email antonrd@gmail.com or my Twitter handle [antonrd](http://twitter.com/antonrd).
 
-If you speaks Bahasa Indonesia you may also post questions or start discussions in [ID-Asterisk](http://asterisk.web.id).
+If you speaks Bahasa Indonesia you may also post questions or start discussions in [ID-Asterisk](http://asterisk.id).
 
 --
 
 Anton Raharja  
-http://www.antonraharja.com
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/antonraharja/book-asterisk-101/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
+[http://www.antonraharja.com](http://www.antonraharja.com)
