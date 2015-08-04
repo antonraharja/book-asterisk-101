@@ -5,7 +5,7 @@ Update **150804**
 
 This is a project of book writing. A companion materials for Asterisk 101 training.
 
-English version is available in [book-contents](book-contents/en) folder.
+English version is available in the [book-contents](book-contents/en/README.md) folder.
 
 Configuration files or related files used in the book are stored in [attached-files](attached-files) folder.
 
