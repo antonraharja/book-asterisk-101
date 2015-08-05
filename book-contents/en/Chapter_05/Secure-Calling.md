@@ -129,13 +129,7 @@ Look for port 5061 in netstat result:
 netstat -lnptu | grep 5061
 ```
 
-# Secure RTP
-
-RTP is the media path or data part of communication.
-
-## Enable encryption
-
-Enable RTP encryption for specific SIP account by turning `encryption` option to `yes` in SIP account.
+Enable `transport` option on each SIP accounts.
 
 Edit `/etc/asterisk/sip_friends.conf`:
 
@@ -144,7 +138,36 @@ Edit `/etc/asterisk/sip_friends.conf`:
 type=friend
 ...
 ...
+transport=tls
+```
+
+Reload SIP configuration:
+
+```
+asterisk -rx 'sip reload'
+```
+
+Note: In FreePBX you can enable this from Extensions menu and the apply configuration.
+
+## Enable encryption
+
+Enable RTP encryption for specific SIP account by turning `encryption` option to `yes` in SIP account. The `transport` option must be `tls`.
+
+Edit `/etc/asterisk/sip_friends.conf`:
+
+```
+[101]
+type=friend
+...
+...
+transport=tls
 encryption=yes
 ```
 
-In FreePBX you can enable this from Extensions menu.
+Reload SIP configuration:
+
+```
+asterisk -rx 'sip reload'
+```
+
+In FreePBX you can enable this from Extensions menu and then apply configuration.
