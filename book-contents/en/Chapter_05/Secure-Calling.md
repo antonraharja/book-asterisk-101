@@ -151,6 +151,26 @@ asterisk -rx 'sip reload'
 
 Note: In FreePBX you can enable this from Extensions menu and the apply configuration.
 
+## SIP UA configuration
+
+SIP UA need to use the supplied client certificate by adding it though the provided menu on SIP UA and then add the CA certificate to their computer if the CA certificate is a self-signed certificate.
+
+Adding CA certificate to Ubuntu (as root):
+
+```
+cp ca.crt /usr/local/share/ca-certificates/asterisk-server.crt
+update-ca-certificates
+```
+
+Adding CA certificate to CentOS (as root):
+
+```
+yum install ca-certificates
+update-ca-trust enable
+cp ca.crt /etc/pki/ca-trust/source/anchors/
+update-ca-trust extract
+```
+
 # Secure RTP
 
 RTP is the media path or data part of communication. This the actual voice stream that need to be protected.
