@@ -2,24 +2,41 @@
 
 ## Generate Certificates
 
+Create placeholder for our keys:
+
 ```
 mkdir -p /etc/asterisk/keys
 ```
+
+Navigate to Asterisk source code directory and its `contrib/scripts`:
+
 ```
 cd /home/support/asterisk-11.18.0/contrib/scripts
 ```
 
+Use contributed script to generate self-certificates.
+
+Usage for server certificate:
+
 ```
 ./ast_tls_cert -C [COMMON_NAME] -O "[ORG_NAME]" -d /etc/asterisk/keys
 ```
+
+Example of generating server certificate:
+
 ```
 ./ast_tls_cert -C 192.168.2.5 -O "My Asterisk" -d /etc/asterisk/keys
 ```
+
+Usage for client certificate:
+
 ```
 ./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt \
 -k /etc/asterisk/keys/ca.key -C [COMMON_NAME] \
 -O "[ORG_NAME]" -d /etc/asterisk/keys -o [CLIENT_CERT_NAME]
 ```
+
+Example of generating client certificate:
 
 ```
 ./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt \
@@ -27,19 +44,25 @@ cd /home/support/asterisk-11.18.0/contrib/scripts
 -O "My Asterisk" -d /etc/asterisk/keys -o allphones
 ```
 
+Navigate to our keys placeholder:
+
 ```
 cd /etc/asterisk/keys
 ```
+
+Generate .p12 file for clients requesting this format, usage:
 
 ```
 openssl pkcs12 -export -out [CLIENT_CERT_NAME].p12 -inkey ca.key -in ca.crt -certfile asterisk.crt
 ```
 
+Example:
+
 ```
 openssl pkcs12 -export -out allphones.p12 -inkey ca.key -in ca.crt -certfile asterisk.crt
 ```
 
-Check generated server and client certificates:
+Check all generated server and client certificates:
 
 ```
 ls -l /etc/asterisk/keys
@@ -69,7 +92,7 @@ What you can distribute to clients:
 ca.crt
 allphones.crt
 allphones.p12
-``
+```
 
 ## Enable TLS supports
 
