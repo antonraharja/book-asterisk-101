@@ -224,6 +224,8 @@ Direct peer-to-peer RTP between SIP accounts in Asterisk requires certain condit
 - Set `directrtpsetup` to `yes` globally
 - Set disallowed and allowed codec the same for all participating SIP accounts, for example by setting `disallow=all` followed by `allow=ulaw`
 
+Below is the example of ZRTP preparation for a SIP account (in this case `101`). You must do these type of changes on all participating SIP accounts.
+
 Edit `/etc/asterisk/sip_friends.conf`:
 
 ```
