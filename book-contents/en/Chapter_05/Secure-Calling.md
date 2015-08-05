@@ -1,3 +1,6 @@
+# Secure Calling
+
+## Generate Certificates
 
 ```
 mkdir -p /etc/asterisk/keys
@@ -38,4 +41,31 @@ openssl pkcs12 -export -out allphones.p12 -inkey ca.key -in ca.crt -certfile ast
 
 ```
 ls -l /etc/asterisk/keys
+```
+
+## Enable TLS supports
+
+Edit `/etc/asterisk/sip.conf` and add below options. In FreePBX you will need to add these into `/etc/asterisk/sip_general_custom.conf`
+
+```
+tlsenable=yes
+tlsbindaddr=0.0.0.0
+tlscertfile=/etc/asterisk/keys/asterisk.pem
+tlscafile=/etc/asterisk/keys/ca.crt
+tlscipher=ALL
+tlsclientmethod=tlsv1
+```
+
+Followed by Asterisk restart
+
+```
+asterisk -rx 'core restart now'
+```
+
+## Verify Configuration
+
+Look for port 5061 in netstat result:
+
+```
+netstat -lnptu | grep 5061
 ```
