@@ -11,7 +11,7 @@ There are 3 sub-topics in this topic, they are:
 
 # Secure SIP
 
-SIP is the signalling part of communication.
+SIP is the signalling part of communication. Securing SIP means that we are protecting the call metadata from the Man in The Middle.
 
 ## Generate Certificates
 
@@ -173,7 +173,7 @@ update-ca-trust extract
 
 # Secure RTP
 
-RTP is the media path or data part of communication. This the actual voice stream that need to be protected.
+RTP is the media path or data part of communication. This is the actual voice stream that need to be protected. An encrypted RTP packets will not be easy (read: virtually impossible) to listen to.
 
 ## Enable encryption
 
