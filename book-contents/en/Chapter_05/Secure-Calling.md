@@ -39,9 +39,37 @@ openssl pkcs12 -export -out [CLIENT_CERT_NAME].p12 -inkey ca.key -in ca.crt -cer
 openssl pkcs12 -export -out allphones.p12 -inkey ca.key -in ca.crt -certfile asterisk.crt
 ```
 
+Check generated server and client certificates:
+
 ```
 ls -l /etc/asterisk/keys
 ```
+
+You should found similar to this:
+
+```
+-rw------- 1 root root 1208 Aug  5 09:56 allphones.crt
+-rw------- 1 root root  570 Aug  5 09:56 allphones.csr
+-rw------- 1 root root  887 Aug  5 09:56 allphones.key
+-rw-r--r-- 1 root root 4909 Aug  5 09:57 allphones.p12
+-rw------- 1 root root 2095 Aug  5 09:56 allphones.pem
+-rw------- 1 root root 1208 Aug  5 09:53 asterisk.crt
+-rw------- 1 root root  570 Aug  5 09:53 asterisk.csr
+-rw------- 1 root root  887 Aug  5 09:53 asterisk.key
+-rw------- 1 root root 2095 Aug  5 09:53 asterisk.pem
+-rw------- 1 root root  157 Aug  5 09:53 ca.cfg
+-rw------- 1 root root 1757 Aug  5 09:53 ca.crt
+-rw------- 1 root root 3311 Aug  5 09:53 ca.key
+-rw------- 1 root root  118 Aug  5 09:56 tmp.cfg
+```
+
+What you can distribute to clients:
+
+```
+ca.crt
+allphones.crt
+allphones.p12
+``
 
 ## Enable TLS supports
 
