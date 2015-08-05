@@ -1,7 +1,7 @@
 Chapter 5
 =========
 
-This chapter focus on DAHDI. There are also several other topics as bonus.
+This chapter focus on DAHDI and security. There are also several other topics as bonus.
 
 * [Chapter 5](Chapter-05.md)
 	* [DAHDI](Chapter_05/DAHDI.md)
@@ -10,4 +10,3 @@ This chapter focus on DAHDI. There are also several other topics as bonus.
 	* [SIP Video Calls](Chapter_05/SIP-Video-Calls.md)
 	* [Secure Calling](Chapter_05/Secure-Calling.md)
 	* [Fail2Ban](Chapter_05/Fail2Ban.md)
-	* [FreePBX on Ubuntu](Chapter_05/FreePBX-on-Ubuntu.md)

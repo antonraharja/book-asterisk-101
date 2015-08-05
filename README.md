@@ -1,7 +1,7 @@
-Asterisk 101
-============
+Asterisk 101 Book Project
+=========================
 
-Update **150804**
+Update **150805**
 
 This is a project of book writing. A companion materials for Asterisk 101 training.
 
@@ -13,7 +13,10 @@ Any questions may be directed to me through my email antonrd@gmail.com or my Twi
 
 If you speaks Bahasa Indonesia you may also post questions or start discussions in [ID-Asterisk](http://asterisk.id).
 
---
+# License
 
-Anton Raharja
-[http://www.antonraharja.com](http://www.antonraharja.com)
+This project is licensed as [GNU Free Documentation License version 1.3](LICENSE.md)
+
+# Maintainer
+
+* [Anton Raharja](http://antonraharja.com)

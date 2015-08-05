@@ -1,5 +1,6 @@
-# Asterisk 101 Book
+Asterisk 101 Book Project
+=========================
 
-## Table of Contents
+# Table of Content
 
 * [English version](en/README.md)
