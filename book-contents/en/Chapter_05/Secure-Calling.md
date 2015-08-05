@@ -1,4 +1,15 @@
-# Secure Calling
+Secure Calling
+==============
+
+There are 3 sub-topics in this topics, they are:
+
+- Secure SIP
+- Secure RTP
+- ZRTP
+
+# Secure SIP
+
+SIP is the signalling part of communication.
 
 ## Generate Certificates
 
@@ -117,3 +128,23 @@ Look for port 5061 in netstat result:
 ```
 netstat -lnptu | grep 5061
 ```
+
+# Secure RTP
+
+RTP is the media path or data part of communication.
+
+## Enable encryption
+
+Enable RTP encryption for specific SIP account by turning `encryption` option to `yes` in SIP account.
+
+Edit `/etc/asterisk/sip_friends.conf`:
+
+```
+[101]
+type=friend
+...
+...
+encryption=yes
+```
+
+In FreePBX you can enable this from Extensions menu.
