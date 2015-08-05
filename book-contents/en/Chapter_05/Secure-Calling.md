@@ -1,15 +1,15 @@
 Secure Calling
 ==============
 
-Secure calling can be achieved by enabling **TLS**. Once implemented SIP UA can choose to use transport TLS instead of UDP or TCP. The advantage of choosing TLS is that the SIP traffic exchanged between SIP UA and Asterisk will be encrypted, it means it will take a considerable amount of time and effort to decrypt it without the encryption key, if not possible.
+Secure calling can be achieved by enabling **TLS** to encrypt the signalling and enabling **SRTP** or **ZRTP** to encrypt the media or data. Once implemented SIP UA can choose to use transport TLS instead of UDP or TCP. The advantage of choosing TLS is that the SIP traffic exchanged between SIP UA and Asterisk will be encrypted, it means it will take a considerable amount of time and effort to decrypt it without the encryption key, if not possible.
 
 There are 3 sub-topics in this topic, they are:
 
-- Secure SIP
-- Secure RTP
-- ZRTP
+- [Secure SIP](#secure-sip)
+- [Secure RTP](#secure-rtp)
+- [ZRTP](#zrtp)
 
-Later after going through this topic (and its sub-topics) in the end you must decide whether you want to implement TLS with SRTP or TLS with ZRTP. You cannot have both for a call, but you might have both implemented on your systems (for different calls).
+Later after going through this topic in the end you must decide whether you want to implement TLS with SRTP or TLS with ZRTP. You cannot have both for a call, but you might have both implemented on your systems (for different calls).
 
 Please note that having TLS enabled is a must, and successfully configure and enable SRTP or ZRTP is crucial on any Asterisk deployment.
 
@@ -25,15 +25,13 @@ Create placeholder for our keys:
 mkdir -p /etc/asterisk/keys
 ```
 
-Navigate to Asterisk source code directory and its `contrib/scripts`:
+Navigate to Asterisk source code directory and its `contrib/scripts`. Example:
 
 ```
 cd /home/support/asterisk-11.18.0/contrib/scripts
 ```
 
-Use contributed script to generate self-signed certificates.
-
-Usage for server certificate:
+Use contributed script to generate self-signed certificates. Usage for server certificate:
 
 ```
 ./ast_tls_cert -C [COMMON_NAME] -O "[ORG_NAME]" -d /etc/asterisk/keys
@@ -57,13 +55,13 @@ Example of generating client certificate:
 ./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt -k /etc/asterisk/keys/ca.key -C 192.168.2.5 -O "My Asterisk" -d /etc/asterisk/keys -o allphones
 ```
 
-Navigate to our keys placeholder:
+Navigate to our keys placeholder again:
 
 ```
 cd /etc/asterisk/keys
 ```
 
-Generate .p12 file for clients requesting this format, usage:
+Generate `.p12` file for SIP UA requesting certificate in this format, usage:
 
 ```
 openssl pkcs12 -export -out [CLIENT_CERT_NAME].p12 -inkey ca.key -in ca.crt -certfile asterisk.crt
@@ -81,7 +79,7 @@ Check all generated server and client certificates:
 ls -l /etc/asterisk/keys
 ```
 
-You should found similar to this:
+You should found similar list to this:
 
 ```
 -rw------- 1 root root 1208 Aug  5 09:56 allphones.crt
@@ -99,7 +97,7 @@ You should found similar to this:
 -rw------- 1 root root  118 Aug  5 09:56 tmp.cfg
 ```
 
-What you can distribute to clients and they can use on their SIP UA:
+Here are files that you can distribute to clients where they can use them on their SIP UA:
 
 ```
 ca.crt
@@ -110,7 +108,7 @@ allphones.p12
 
 ## Enable TLS supports
 
-Edit `/etc/asterisk/sip.conf` and add below options. In FreePBX you will need to add these into `/etc/asterisk/sip_general_custom.conf`
+Edit `/etc/asterisk/sip.conf` and add below options:
 
 ```
 tlsenable=yes
@@ -152,8 +150,6 @@ Reload SIP configuration:
 ```
 asterisk -rx 'sip reload'
 ```
-
-Note: In FreePBX you can enable this from Extensions menu and the apply configuration.
 
 ## SIP UA configuration
 
@@ -199,8 +195,6 @@ Reload SIP configuration:
 ```
 asterisk -rx 'sip reload'
 ```
-
-In FreePBX you can enable this from Extensions menu and then apply configuration.
 
 # ZRTP
 
@@ -250,7 +244,5 @@ Reload SIP configuration:
 ```
 asterisk -rx 'sip reload'
 ```
-
-In FreePBX you can enable this from Extensions menu and then apply configuration.
 
 Continue to configure all participating SIP UA to disable SRTP and enable or create ZRTP session.
