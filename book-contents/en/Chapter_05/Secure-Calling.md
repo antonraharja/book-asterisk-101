@@ -9,6 +9,10 @@ There are 3 sub-topics in this topic, they are:
 - Secure RTP
 - ZRTP
 
+Later after going through this topic (and its sub-topics) in the end you must decide whether you want to implement TLS with SRTP or TLS with ZRTP. You cannot have both for a call, but you might have both implemented on your systems (for different calls).
+
+Please note that having TLS enabled is a must, and successfully configure and enable SRTP or ZRTP is crucial on any Asterisk deployment.
+
 # Secure SIP
 
 SIP is the signalling part of communication. Securing SIP means that we are protecting the call metadata from the Man in The Middle.
