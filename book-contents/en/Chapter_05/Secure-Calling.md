@@ -31,17 +31,13 @@ Example of generating server certificate:
 Usage for client certificate:
 
 ```
-./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt \
--k /etc/asterisk/keys/ca.key -C [COMMON_NAME] \
--O "[ORG_NAME]" -d /etc/asterisk/keys -o [CLIENT_CERT_NAME]
+./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt -k /etc/asterisk/keys/ca.key -C [COMMON_NAME] -O "[ORG_NAME]" -d /etc/asterisk/keys -o [CLIENT_CERT_NAME]
 ```
 
 Example of generating client certificate:
 
 ```
-./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt \
--k /etc/asterisk/keys/ca.key -C 192.168.2.5 \
--O "My Asterisk" -d /etc/asterisk/keys -o allphones
+./ast_tls_cert -m client -c /etc/asterisk/keys/ca.crt -k /etc/asterisk/keys/ca.key -C 192.168.2.5 -O "My Asterisk" -d /etc/asterisk/keys -o allphones
 ```
 
 Navigate to our keys placeholder:
