@@ -86,6 +86,7 @@ What you can distribute to clients:
 
 ```
 ca.crt
+asterisk.crt
 allphones.crt
 allphones.p12
 ```
