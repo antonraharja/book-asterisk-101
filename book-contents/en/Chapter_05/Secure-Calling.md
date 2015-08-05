@@ -197,3 +197,54 @@ asterisk -rx 'sip reload'
 ```
 
 In FreePBX you can enable this from Extensions menu and then apply configuration.
+
+# ZRTP
+
+Quoting Wikipedia:
+
+> ZRTP (composed of Z and Real-time Transport Protocol) is a cryptographic key-agreement protocol
+> to negotiate the keys for encryption between two end points in a Voice over Internet Protocol (VoIP)
+> phone telephony call based on the Real-time Transport Protocol. It uses Diffie–Hellman key exchange
+> and the Secure Real-time Transport Protocol (SRTP) for encryption.
+
+What I know about **Asterisk+ZRTP**:
+
+- ZRTP is using Secure RTP to encrypt data
+- ZRTP implements Short Authentication String (SAS) to mitigate Man in The Middle attack (basically this is to make sure that the other end is someone the caller knows verbally)
+- ZRTP initiated by the caller and the callee must respond to it
+- We need to choose between using **TLS+SRTP** or **TLS+ZRTP**, cannot have both in one secure call
+- Asterisk do not understand ZRTP and cannot allow ZRTP to pass between participating SIP accounts, therefore the RTP (which is actually ZRTP packets) between SIP accounts must be direct peer-to-peer without Asterisk intervention
+- No NAT between each participating SIP accounts in conversation
+ 
+Direct peer-to-peer RTP between SIP accounts in Asterisk requires certain condition to be met. On each SIP accounts you must set the following:
+
+- Disable NAT support by setting `nat` to `no` on each peers
+- Disable SRTP by setting `encryption` to `no` on each peers, you can still use `transport=tls`
+- Enable peer-to-peer media path by setting `directmedia` to `yes` on each peers
+- Set `directrtpsetup` to `yes` globally
+- Set disallowed and allowed codec the same for all participating SIP accounts, for example by setting `disallow=all` followed by `allow=ulaw`
+
+Edit `/etc/asterisk/sip_friends.conf`:
+
+```
+[101]
+type=friend
+...
+...
+transport=tls
+encryption=no
+nat=no
+directmedia=yes
+disallow=all
+allow=ulaw
+```
+
+Reload SIP configuration:
+
+```
+asterisk -rx 'sip reload'
+```
+
+In FreePBX you can enable this from Extensions menu and then apply configuration.
+
+Continue to configure all participating SIP UA to disable SRTP and enable or create ZRTP session.
