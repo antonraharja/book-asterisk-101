@@ -9,11 +9,11 @@ There are 3 sub-topics in this topic, they are:
 - Secure RTP
 - ZRTP
 
-## Secure SIP
+# Secure SIP
 
 SIP is the signalling part of communication.
 
-### Generate Certificates
+## Generate Certificates
 
 Create placeholder for our keys:
 
@@ -104,7 +104,7 @@ allphones.crt
 allphones.p12
 ```
 
-### Enable TLS supports
+## Enable TLS supports
 
 Edit `/etc/asterisk/sip.conf` and add below options. In FreePBX you will need to add these into `/etc/asterisk/sip_general_custom.conf`
 
@@ -151,7 +151,7 @@ asterisk -rx 'sip reload'
 
 Note: In FreePBX you can enable this from Extensions menu and the apply configuration.
 
-## Secure RTP
+# Secure RTP
 
 RTP is the media path or data part of communication. This the actual voice stream that need to be protected.
 
