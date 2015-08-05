@@ -1,17 +1,19 @@
 Secure Calling
 ==============
 
-There are 3 sub-topics in this topics, they are:
+Secure calling can be achieved by enabling **TLS**. Once implemented SIP UA can choose to use transport TLS instead of UDP or TCP. The advantage of choosing TLS is that the SIP traffic exchanged between SIP UA and Asterisk will be encrypted, it means it will take a considerable amount of time and effort to decrypt it without the encryption key, if not possible.
+
+There are 3 sub-topics in this topic, they are:
 
 - Secure SIP
 - Secure RTP
 - ZRTP
 
-# Secure SIP
+## Secure SIP
 
 SIP is the signalling part of communication.
 
-## Generate Certificates
+### Generate Certificates
 
 Create placeholder for our keys:
 
@@ -25,7 +27,7 @@ Navigate to Asterisk source code directory and its `contrib/scripts`:
 cd /home/support/asterisk-11.18.0/contrib/scripts
 ```
 
-Use contributed script to generate self-certificates.
+Use contributed script to generate self-signed certificates.
 
 Usage for server certificate:
 
@@ -93,7 +95,7 @@ You should found similar to this:
 -rw------- 1 root root  118 Aug  5 09:56 tmp.cfg
 ```
 
-What you can distribute to clients:
+What you can distribute to clients and they can use on their SIP UA:
 
 ```
 ca.crt
@@ -102,7 +104,7 @@ allphones.crt
 allphones.p12
 ```
 
-## Enable TLS supports
+### Enable TLS supports
 
 Edit `/etc/asterisk/sip.conf` and add below options. In FreePBX you will need to add these into `/etc/asterisk/sip_general_custom.conf`
 
@@ -149,9 +151,13 @@ asterisk -rx 'sip reload'
 
 Note: In FreePBX you can enable this from Extensions menu and the apply configuration.
 
+## Secure RTP
+
+RTP is the media path or data part of communication. This the actual voice stream that need to be protected.
+
 ## Enable encryption
 
-Enable RTP encryption for specific SIP account by turning `encryption` option to `yes` in SIP account. The `transport` option must be `tls`.
+Enable RTP encryption for specific SIP account by turning `encryption` option to `yes` in SIP account. The `transport` option must be `tls` and SIP UA must be registered and using transport TLS.
 
 Edit `/etc/asterisk/sip_friends.conf`:
 
