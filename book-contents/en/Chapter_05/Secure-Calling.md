@@ -239,6 +239,17 @@ disallow=all
 allow=ulaw
 ```
 
+Edit `/etc/asterisk/sip.conf`, add this option just above the include of file `sip_friends.conf`:
+
+```
+...
+...
+directrtpsetup=yes
+...
+...
+#include "sip_friends.conf"
+```
+
 Reload SIP configuration:
 
 ```
