@@ -1,6 +1,6 @@
 # Hello Friend
 
-This is "Hello Friend" for Asterisk, the first setting and testing of SIP extension calling a service.
+This is *Hello Friend* for Asterisk, the first setting and testing of SIP extension calling a service.
 
 Edit /etc/asterisk/sip.conf
 ---------------------------

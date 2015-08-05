@@ -1,6 +1,6 @@
 # SIP to SIP Calls
 
-We are advancing the [[Hello Friend|1.6-Hello-World]].
+We are advancing the [Hello-Friend](Hello-Friend.md).
 
 Prepare 3 SIP devices (SIP IP Phones or Softphone), we will configure 3 SIP phones with 2 different dialplan contexts.
 
