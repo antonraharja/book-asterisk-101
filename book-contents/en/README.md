@@ -44,5 +44,6 @@ Update **150804**
 	* [Voicemail](Chapter_05/Voicemail.md)
 	* [G729](Chapter_05/G729.md)
 	* [SIP Video Calls](Chapter_05/SIP-Video-Calls.md)
+	* [Secure Calling](Chapter_05/Secure-Calling.md)
 	* [Fail2Ban](Chapter_05/Fail2Ban.md)
 	* [FreePBX on Ubuntu](Chapter_05/FreePBX-on-Ubuntu.md)
