@@ -1,6 +1,10 @@
 Asterisk 101 Book Project
 =========================
 
+The open book writing project. A companion materials for Asterisk 101 training.
+
+I suggest that 1 chapter to be done in 1 day. I also suggest to get at least 1 friend or partner to go through this book content, 1 topic at a time.
+
 Update **150805**
 
 # Table of Contents
