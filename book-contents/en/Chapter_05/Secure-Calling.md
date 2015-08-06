@@ -257,3 +257,7 @@ asterisk -rx 'sip reload'
 ```
 
 Continue to configure all participating SIP UA to disable SRTP and enable or create ZRTP session.
+
+# References
+
+- [Secure Calling Tutorial](https://wiki.asterisk.org/wiki/display/AST/Secure+Calling+Tutorial)
