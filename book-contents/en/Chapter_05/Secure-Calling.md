@@ -213,6 +213,10 @@ What I know about **Asterisk+ZRTP**:
 - We need to choose between using **TLS+SRTP** or **TLS+ZRTP**, cannot have both in one secure call
 - Asterisk do not understand ZRTP and cannot allow ZRTP to pass between participating SIP accounts, therefore the RTP (which is actually ZRTP packets) between SIP accounts must be direct peer-to-peer without Asterisk intervention
 - No NAT between each participating SIP accounts in conversation
+
+Please note: You do not need to setup Asterisk for ZRTP if you already choose to use TLS with SRTP. Further more setting up Asterisk for ZRTP is currently limiting your Asterisk to provide some feature, or should I say you will be forced to limit some feature otherwise ZRTP won't work.
+
+Continue.
  
 Direct peer-to-peer RTP between SIP accounts in Asterisk requires certain condition to be met. On each SIP accounts you must set the following:
 
