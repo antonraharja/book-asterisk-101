@@ -216,7 +216,7 @@ What I know about **Asterisk+ZRTP**:
 
 Please note: You do not need to setup Asterisk for ZRTP if you already choose to use TLS with SRTP. Further more setting up Asterisk for ZRTP is currently limiting your Asterisk to provide some feature, or should I say you will be forced to limit some feature otherwise ZRTP won't work.
 
-Continue.
+Continue ? Ok.
  
 Direct peer-to-peer RTP between SIP accounts in Asterisk requires certain condition to be met. On each SIP accounts you must set the following:
 
