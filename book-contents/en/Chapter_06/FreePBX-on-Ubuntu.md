@@ -88,7 +88,7 @@ Next to run below commands and follow instructions given at `install_amp`:
 cd /root
 tar -zxf freepbx-2.11.0.42.tgz 
 cd freepbx/
-./install_amp --cleaninstall
+./install_amp --cleaninstall --installdb
 ```
 
 ## Testing
