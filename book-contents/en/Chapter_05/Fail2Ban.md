@@ -18,7 +18,7 @@ apt-get install postfix
 apt-get install fail2ban
 ```
 
-Please note that you must enable [Asterisk logger](Chapter_02/Asterisk-Log-Files.md) before continue setting up fail2ban.
+Please note that you must enable [Asterisk logger](../Chapter_02/Asterisk-Log-Files.md) before continue setting up fail2ban.
 
 Also make sure that Postfix is configured properly.
 
