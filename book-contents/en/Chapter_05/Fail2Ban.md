@@ -18,7 +18,7 @@ apt-get install postfix
 apt-get install fail2ban
 ```
 
-Please note that you must enable [[Asterisk logger|2.3-Asterisk-Log-Files]] before continue setting up fail2ban.
+Please note that you must enable [Asterisk logger](Chapter_02/Asterisk-Log-Files.md) before continue setting up fail2ban.
 
 Also make sure that Postfix is configured properly.
 
@@ -95,6 +95,10 @@ touch /etc/fail2ban/jail.conf
 Edit new ```jail.conf```:
 
 ```
+[DEFAULT]
+
+ignoreip = 127.0.0.1/8
+
 [asterisk-iptables]
 
 enabled  = true
@@ -105,6 +109,8 @@ logpath  = /var/log/asterisk/messages
 maxretry = 10
 bantime = 259200
 ```
+
+You are also encouraged to add more jails copied from `/etc/fail2ban/jail.conf.dist`, for example for protecting SSH.
 
 ## Running fail2ban
 
