@@ -2,7 +2,7 @@
 
 ## Introduction
 
-As explained in [[SIP Accounts|2.7-SIP-Accounts]], instead of working directly with the main file we should instead include other files and work with them. In this topic the dialplan contained in `extensions.conf` will be written on different files and those files included by `extensions.con`.
+As explained in [[SIP Accounts|SIP-Accounts]], instead of working directly with the main file we should instead include other files and work with them. In this topic the dialplan contained in `extensions.conf` will be written on different files and those files included by `extensions.con`.
 
 Each files will contain specific dialplans.
 
