@@ -18,7 +18,7 @@ exten => 103,n,Dial(SIP/101)
 exten => 103,n,Hangup
 ```
 
-below example will have the same outcome, slightly simple then previous:
+Below example will have the same outcome, slightly simple then previous:
 
 ```
 [office]
